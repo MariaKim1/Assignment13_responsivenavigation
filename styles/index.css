@@ -1,0 +1,148 @@
+body {
+    max-width: 1440px;
+    width: 100%;
+    min-height: auto;
+    margin: auto;
+    padding: 10px;
+    background-color: rgb(248, 248, 236);
+}
+
+
+/* ===== HEADER ====== */
+
+.header-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+
+.header-logo__desktop /* (h2) */{
+    font-family: 'Aldrich', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.25px;
+    text-align: left;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav__mobile {
+  display: none;
+}
+
+.fa-bars {
+  color: black;
+}
+
+.header-nav__item {
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-decoration: none;
+}
+
+.header-nav__item:hover {
+    background-color: rgb(252, 224, 224);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* ===== OVERLAY MENU  ====== */
+
+
+
+
+/* ===== MAIN CONTENT ====== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    margin: auto;
+    padding: 10px;
+}
+
+h1 { 
+    font-family: 'Poppins', sans-serif;
+    font-size: 90px;
+    font-weight: 500;
+    line-height: 102px;
+    letter-spacing: -2px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+p { 
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 0px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.container-p {
+    max-width: 50%;
+    margin: auto;
+}
+
+
+.img-container {
+    max-width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.img-crayfish {
+    max-height: 275px;    
+    margin: 10px;
+}
+
+/* ====== MEDIA QUERYS - START ====== */
+
+/* TABLET SCREEN */
+@media screen and (max-width: 768px) {
+  .header-logo__desktop {
+      font-family: 'Baloo 2', sans-serif;
+  }
+  .header-nav__item {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 52px;
+  }
+  .img-container {
+    flex-direction: column;
+  }
+}
+
+/* Mobile screen */
+@media screen and (max-width: 479px) {
+  h1 {
+      font-size: 36px;
+  }
+  .header-nav {
+    display: none;
+  }
+  .header-nav__mobile {
+    display: flex;
+    min-width: 42px;
+  }
+}
+
+
+/* ====== MEDIA QUERYS - END ====== */
