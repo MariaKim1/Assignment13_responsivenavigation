@@ -12,7 +12,7 @@ body {
 
 .header-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin: auto;
 }
@@ -29,7 +29,7 @@ body {
 
 .header-nav__item {
     color: rgb(0, 0, 0);
-    padding: 20px;
+    margin-left: 10px;
     font-family: 'Source Sans 3', sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -46,16 +46,10 @@ body {
 
 /* ===== DROP-DOWN MENU  ====== */
 
-.dropdown-nav {
-    position: relative;
-    display: inline-block;
-}
-
 .dropdown__list {
     background-color: rgb(248, 248, 236);
     min-width: 200px;
     padding: 10px;
-    position: absolute;
     display: none;
 }
 
@@ -63,24 +57,30 @@ body {
     background-color: rgb(248, 248, 236); 
     padding: none;
     font-size: 18px;
+    border: none;
     cursor: pointer;
     display: none;
 }
 
-.dropdown__btn:hover {
-    color: rgb(252, 224, 224);
-}
-
 .fa-bars {
     color: black;
+    float: right;
 }
 
 .dropdown__item {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     color: rgb(0, 0, 0);
     min-width: auto;
     padding: 15px;
     text-decoration: none;
-    display: none;
+    display: block;
+}
+
+/* ---- dropdown: hover ----- */
+.fa-bars:hover {
+    color: rgb(252, 224, 224);
 }
 
 .dropdown__item:hover {
@@ -89,8 +89,13 @@ body {
     border-radius: 10px;
 }
 
-.dropdown__list:hover { display: inline-block;}
-.dropdown__item:hover { display: inline-block;}
+.dropdown__list:hover { 
+    display: inline-block;
+}
+
+.dropdown__item:hover { 
+    display: inline-block;
+}
 
 
 /* ===== MAIN CONTENT ====== */
@@ -146,30 +151,56 @@ p {
 
 /* ====== MEDIA QUERYS - START ====== */
 
+/* COMMENT: In assignment 12 I couldn't get the mobile-menu to pop up unless I forced
+            the screen to shrink. But in this assignment I realized that my screen 
+            stops shrinking when it comes to a 700px width for some reason... which is why I put 
+            max-width 768px for this media query.*/
 
 @media screen and (max-width: 768px) { /* TABLET SCREEN */
     
     /* --- @media: main --- */
   
     h1 {
-        font-size: 52px;}
+        font-size: 52px;
+    }
     .img-container {
-        flex-direction: column;}
+        flex-direction: column;
+    }
 
+    
     /* --- @media: nav --- */
-    .header-container { 
-        display: flex;
-        justify-content: space-around;}
+
     .header-nav__item { 
         display: none;}
-    .header-nav__dropdown-btn { 
-        display: block;}
+        
+    .dropdown__btn { 
+        display: flex;
+        position: relative;
+    }
+    .fa-bars {
+        color: black;
+        float: right;
+        display: block;
+    }
+    .dropdown__list {
+        display: inline-block;
+        position: absolute;
+    }
+    .dropdown__item {
+        color:rgb(0, 0, 0);
+        display: block;
+    }
 }
-/*
-@media (hover: hover) {
-    .header-nav__dropdown-content:hover { display: inline-block;}
-    .header-nav__content:hover { display: inline-block;}
-}*/
+
+/* QUESTION: After googling like a crazy person around the www for an answer to create a clickable dropdown menu without java script, 
+             I found a few ways to do it with only html and css. However I felt like it was a bit too advanced, too much of not knowing
+             and too much of just re-writing code that I hadn't learned yet. Not great. 
+             So, my aim was to create a hamburger menu that was hoverable. 
+             I tried using @media (hover: hover), but maybe I missunderstood the purpose..? 
+             I had a look at your styles too and asked a classmate, but I can not get the dropdown menu to drop down when the hamburger icon is hoverd. 
+             What am I doing wrong?
+             I'm giving up and are hoping this will be easier once I learn Java script. 
+
 
 /* Mobile screen */
 @media screen and (max-width: 479px) {
